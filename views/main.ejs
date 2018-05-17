@@ -1,0 +1,54 @@
+<html>
+<head>
+  <style>
+  td
+  {
+    padding:5px;
+  }
+  </style>
+</head>
+<body>
+<a href="/shto"><button style="margin:10px; width:150px; height:50px;"> Shto kontrate</button> </a>
+
+<table border='1' style='border-collapse:collapse;'>
+<tr>
+<td>Nr.Rendor</td>
+<td>Lloji i prokurimit</td>
+<td>Aktiviteti i prokurimit</td>
+<td>Data e inicimit te prokurimit</td>
+<td>Data e publikimit</td>
+<td>Data e nenshrimit te kontrates</td>
+<td>Afatet per implementim </td>
+<td>Permbyllja e kontrates</td>
+<td>Cmimi total per kontraten </td>
+<td>Cmimi i kontrates</td>
+<td>Kontraktuesi</td>
+</tr>
+
+
+<% docs.map((doc)=>
+
+{%>
+<tr>
+<td><%=doc.nrRendor %></td>
+<td><%=doc.lloji %></td>
+<td><%=doc.aktiviteti %></td>
+<td><%=doc.dataInicimit %></td>
+<td><%=doc.dataPublikimit %></td>
+<td><%=doc.dataNenshkrimit %></td>
+<td><%=doc.dataImplementimit %></td>
+<td><%=doc.dataPermbylljes %></td>
+<td><%=doc.cmimi %></td>
+<td><%=doc.cmimiKontrates %></td>
+<td><%=doc.kontraktuesi %></td>
+
+<td><a href="/kontrata/delete/<%=doc._id%>">Fshije </a></td>
+<td><a href="/kontrata/edit/<%= doc._id %>">Ndrysho </a></td>
+
+<%}); %>
+</tr>
+
+
+</table>
+</body>
+</html>
